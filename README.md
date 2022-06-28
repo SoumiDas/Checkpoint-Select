@@ -5,4 +5,4 @@
 
 # Getting Started
 
-'''git clone https://github.com/SoumiDas/CheckSelect.git'''
+```git clone https://github.com/SoumiDas/CheckSelect.git```
