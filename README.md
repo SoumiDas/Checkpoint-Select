@@ -5,11 +5,13 @@
 
 # Getting Started
 
+Run the following commands to setup the environment
+
 ```
 git clone https://github.com/SoumiDas/CheckSelect.git
 
 cd CheckSelect
 
-pip install requirement.txt
+pip install requirements.txt
 
 ```
