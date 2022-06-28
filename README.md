@@ -22,7 +22,7 @@ pip install requirements.txt
 
 <i>Model:</i> ResNet-18
 
-The default parameters are provided in ```config.yaml```. One can play around with the parameters by running ```python config_create.py```
+The default parameters are provided in ```config.yaml```. One can vary the parameters by running ```python config_create.py```
 
 In order to obtain selected checkpoints followed by data valuation and training the subset of data, run
 
