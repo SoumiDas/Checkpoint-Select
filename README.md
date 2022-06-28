@@ -13,7 +13,7 @@ git clone https://github.com/SoumiDas/CheckSelect.git
 
 cd CheckSelect
 
-pip install requirements.txt
+conda create --name checksel --file requirements.txt
 
 ```
 # Current Setup
