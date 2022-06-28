@@ -5,4 +5,4 @@
 
 # Installation
 
-
+''' git clone https://github.com/SoumiDas/CheckSelect.git '''
