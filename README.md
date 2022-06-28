@@ -18,7 +18,8 @@ conda create --name checksel --file requirements.txt
 
 After the environment gets installed,
 
-'''conda activate checksel
+'''
+conda activate checksel
 ```
 # Current Setup
 
