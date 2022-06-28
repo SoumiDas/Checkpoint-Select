@@ -18,3 +18,9 @@ pip install requirements.txt
 # Execution
 
 The default parameters are provided in ```config.yaml```. One can play around with the parameters by running ```python config_create.py```
+
+In order to obtain selected checkpoints followed by data valuation and training the subset of data, run
+
+```python experiment.py```
+
+The current setup is for CIFAR-10 dataset and ResNet-18 model. However, one can change as per their requirements in ```dataset.py``` and ```model.py```
