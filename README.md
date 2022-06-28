@@ -34,10 +34,10 @@ The different modules in which this code repository has been organised is:
 
 2. Model (model.py) - Different models can be added here.
 
-3. Trajectory selection during training (run.py) - Selects checkpoints/trajectories along with training
+3. Trajectory selection during training (run.py) - Selects checkpoints/trajectories along with training.
 
-4. Value function definition and CheckSel algorithm (helper.py) - Different other value functions can be incorporated here
+4. Value function definition and CheckSel algorithm (helper.py) - Different other value functions can be incorporated here.
 
-5. Data valuation (scoreval_checksel.py) - Assigns scores to training datapoints using selected checkpoints/trajectories
+5. Data valuation (scoreval_checksel.py) - Assigns scores to training datapoints using selected checkpoints/trajectories.
 
-6. Subset selection (topsel.py or diverselect.py) - Returns a subset of datapoints as (a) top k elements or (b) executing SimSel algorithm using the assigned scores. 
+6. Subset selection (topsel.py or diverselect.py) - Returns a subset of datapoints as (a) top k elements or by (b) executing SimSel algorithm using the assigned scores. 
