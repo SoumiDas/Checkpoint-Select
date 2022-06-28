@@ -3,8 +3,6 @@ from subsetpack.model import Model
 from subsetpack.run import TrajSel
 from subsetpack.helper import HelperFunc
 from subsetpack.scoreval_checksel import DataValueCheckSel
-from subsetpack.scoreval_tracin import DataValueTracIn
-from subsetpack.topsel import TopK
 from subsetpack.diverselect import SimSel
 import config_create
 import yaml
@@ -50,29 +48,10 @@ def main():
 	if confdata['findsubset']:
 		if confdata['simsel']:
 			subsetobj = SimSel(trainset,scores,contrib,confdata)
-			ind = subsetobj.subsetpoints_simsel()
+			ind, subloader = subsetobj.subsetpoints_simsel()
 		else:
 			subsetobj = TopK(scores,trainset,confdata)
 			val, ind, subloader  = subsetobj.subsetpoints()
-
-		trajobj = TrajSel(subloader,testloader,model,helpobj,confdata)
-		trajobj.fit()	
-
-
-	########## Computes value (TracIn score) for all training datapoints using uniformly selected trajectories #########
-	confdata['csel'] = False #CheckSel flag marked as False; one can also set it in config
-	dvalueobj = DataValueTracIn(trainset,testloader,testloader_s,model,helpobj,confdata)
-	scores,contrib = dvalueobj.scorevalue()
-
-	########## Subset of datapoints obtained from the data values using SimSel or TopK procedure ##########	
-	model = modelobj.ResNet18()
-	if confdata['findsubset']:
-		if confdata['simsel']:
-			subsetobj = SimSel(trainset,scores,contrib,confdata)
-			ind = subsetobj.subsetpoints_simsel()
-		else:
-			subsetobj = TopK(scores,trainset,confdata)
-			val, ind, subloader = subsetobj.subsetpoints()
 
 		trajobj = TrajSel(subloader,testloader,model,helpobj,confdata)
 		trajobj.fit()
