@@ -40,9 +40,6 @@ def main():
 	scores,contrib = dvalueobj.scorevalue()
 
 	########## Subset of datapoints obtained from the data values using SimSel or TopK procedure ##########
-	confdata['subtrain'] = True
-	confdata['csel'] = False
-	confdata['epochs']=300
 	helpobj = HelperFunc(trainloader,testloader,model,confdata)
 	model = modelobj.ResNet18()
 	if confdata['findsubset']:
@@ -52,6 +49,10 @@ def main():
 		else:
 			subsetobj = TopK(scores,trainset,confdata)
 			val, ind, subloader  = subsetobj.subsetpoints()
+
+		confdata['subtrain'] = True #subset training
+		confdata['csel'] = False #No more CheckSel
+		confdata['epochs']=300 #Set or keep the same as before
 
 		trajobj = TrajSel(subloader,testloader,model,helpobj,confdata)
 		trajobj.fit()
