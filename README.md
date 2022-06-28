@@ -19,6 +19,7 @@ pip install requirements.txt
 # Current Setup
 
 <i>Dataset:</i> CIFAR-10
+
 <i>Model:</i> ResNet-18
 
 The default parameters are provided in ```config.yaml```. One can play around with the parameters by running ```python config_create.py```
