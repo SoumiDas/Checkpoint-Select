@@ -5,7 +5,7 @@
 
 # Getting Started
 
-Run the following commands to setup the environment
+Run the following commands to setup the environment:
 
 ```
 git clone https://github.com/SoumiDas/CheckSelect.git
@@ -15,3 +15,6 @@ cd CheckSelect
 pip install requirements.txt
 
 ```
+# Execution
+
+The default parameters are provided in ```config.yaml```. One can play around with the parameters by running ```python config_create.py```
