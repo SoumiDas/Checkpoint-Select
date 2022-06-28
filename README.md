@@ -15,7 +15,10 @@ cd CheckSelect
 pip install requirements.txt
 
 ```
-# Execution
+# Current Setup
+
+<i>Dataset:</i> CIFAR-10
+<i>Model:</i> ResNet-18
 
 The default parameters are provided in ```config.yaml```. One can play around with the parameters by running ```python config_create.py```
 
@@ -23,4 +26,18 @@ In order to obtain selected checkpoints followed by data valuation and training 
 
 ```python experiment.py```
 
-The current setup is for CIFAR-10 dataset and ResNet-18 model. However, one can change as per their requirements in ```dataset.py``` and ```model.py```
+# Code Structure
+
+The different modules in which this code repository has been organised is:
+
+1. Dataset (dataset.py) - One can set up their own dataset as needed.
+
+2. Model (model.py) - Different models can be added here.
+
+3. Trajectory selection during training (run.py) - Selects checkpoints/trajectories along with training
+
+4. Value function definition and CheckSel algorithm (helper.py) - Different other value functions can be incorporated here
+
+5. Data valuation (scoreval_checksel.py) - Assigns scores to training datapoints using selected checkpoints/trajectories
+
+6. Subset selection (topsel.py or diverselect.py) - Returns a subset of datapoints as (a) top k elements or (b) executing SimSel algorithm using the assigned scores. 
