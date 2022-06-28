@@ -14,11 +14,11 @@ git clone https://github.com/SoumiDas/CheckSelect.git
 cd CheckSelect
 
 conda create --name checksel --file requirements.txt
-'''
+```
 
 After the environment gets installed,
 
-'''
+```
 conda activate checksel
 ```
 # Current Setup
