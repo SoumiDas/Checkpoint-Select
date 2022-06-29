@@ -61,7 +61,6 @@ For changing datasets, one needs to modify the definitions of the classes ```Dat
 1. Current ResNet implementation is a modified form of the original ResNet suited for images of lower dimension like that of CIFAR10. If we want to use the different architectures of this version of ResNet, we can follow the comments in the code and simply change the self.block and self.layers in the _init_ of ```class Model``` in ```model.py```.
 
 2. If we want to use the original ResNet18 architecture or any other existing architectures from torchvision.models, include the line 
-3. 
 ```model = models.resnet18(pretrained=True) #use torch models``` in model.py
 
 3. ```get_grad()``` function in ```helper.py``` will have the last layer name changed as per the architecture. For the current model, the last layer name is ```self.linear``` ; hence for extracting the last layer output, line number 70 in ```helper.py``` is ```params = model.linear.weight``` .
