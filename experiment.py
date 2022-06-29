@@ -3,9 +3,9 @@ from subsetpack.model import Model
 from subsetpack.run import TrajSel
 from subsetpack.helper import HelperFunc
 from subsetpack.scoreval_checksel import DataValueCheckSel
+from subsetpack.topsel import TopK
 from subsetpack.diverselect import SimSel
 import config_create
-import yaml
 import os
 import json
 
@@ -14,11 +14,11 @@ def main():
 	############ Run the config file to create a dictionary ##########
 	#os.system('python config_create.py')
 	
-	'''with open("config.json", "r") as fp:
-		confdata = json.load(fp) #holds the various configurable parameters needed ahead'''
+	with open("config.json", "r") as fp:
+		confdata = json.load(fp) #holds the various configurable parameters needed ahead
 		
-	with open("config.yaml", "r") as fp:
-		confdata = yaml.load(fp,Loader=yaml.FullLoader)
+	'''with open("config.yaml", "r") as fp:
+		confdata = yaml.load(fp,Loader=yaml.FullLoader)'''
 
 	########### Defining dataset class for loading the required data #############
 	dataobj = Dataset(confdata)
@@ -40,8 +40,6 @@ def main():
 	scores,contrib = dvalueobj.scorevalue()
 
 	########## Subset of datapoints obtained from the data values using SimSel or TopK procedure ##########
-	helpobj = HelperFunc(trainloader,testloader,model,confdata)
-	model = modelobj.ResNet18()
 	if confdata['findsubset']:
 		if confdata['simsel']:
 			subsetobj = SimSel(trainset,scores,contrib,confdata)
@@ -53,7 +51,8 @@ def main():
 		confdata['subtrain'] = True #subset training
 		confdata['csel'] = False #No more CheckSel
 		confdata['epochs']=300 #Set or keep the same as before
-
+		helpobj = HelperFunc(trainloader,testloader,model,confdata)
+		model = modelobj.ResNet18()
 		trajobj = TrajSel(subloader,testloader,model,helpobj,confdata)
 		trajobj.fit()
 
