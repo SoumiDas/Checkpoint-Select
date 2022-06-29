@@ -69,7 +69,7 @@ For the inbuilt torch model, the last layer name for ResNet implementations, is 
 
 4. ```scoreval_checksel``` requires a method to extract features of an image to compute neighbours. This will change as per the architecture to be used, i.e one needs to know from which layer the feature needs to be extracted. In this case, if we want to extract the feature from the penultimate layer, we need to know its name which for this case is avgpool, so we define ```self.layer = self.model._modules.get('avgpool')```.
 
-Overall, while using any other torch models, in order to extract features, one needs to definitely know:
+Overall, while using any other torch models,  one needs to definitely know:
 
 1. the last layer name for computing gradients.
 
