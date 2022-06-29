@@ -7,6 +7,7 @@ from subsetpack.topsel import TopK
 from subsetpack.diverselect import SimSel
 import config_create
 import os
+import yaml
 import json
 
 def main():
@@ -14,11 +15,11 @@ def main():
 	############ Run the config file to create a dictionary ##########
 	#os.system('python config_create.py')
 	
-	with open("config.json", "r") as fp:
-		confdata = json.load(fp) #holds the various configurable parameters needed ahead
+	'''with open("config.json", "r") as fp:
+		confdata = json.load(fp) #holds the various configurable parameters needed ahead'''
 		
-	'''with open("config.yaml", "r") as fp:
-		confdata = yaml.load(fp,Loader=yaml.FullLoader)'''
+	with open("config.yaml", "r") as fp:
+		confdata = yaml.load(fp,Loader=yaml.FullLoader)
 
 	########### Defining dataset class for loading the required data #############
 	dataobj = Dataset(confdata)
