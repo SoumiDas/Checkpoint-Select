@@ -50,7 +50,7 @@ The different modules in which this code repository has been organised is:
 6. Subset selection (topsel.py or diverselect.py) - Returns a subset of datapoints as (a) top k elements or by (b) executing SimSel algorithm using the assigned scores. 
 
 
-# Suggested modifications
+# Using Checksel for other datasets/models
 
 <b> Change in dataset </b>
 
