@@ -211,6 +211,7 @@ class DataValueCheckSel(object):
                           dict_contrib[rem_ind[actind]] = contrib_vec
                    res[rem_ind[actind]] = res[rem_ind[actind]]/len(epbt)
                    dict_contrib[rem_ind[actind]] = dict_contrib[rem_ind[actind]]/len(epbt)
+                   actind = actind + 1
 
         with open('./influence_scores.npy', 'wb') as f:
             np.save(f, np.array(res))
