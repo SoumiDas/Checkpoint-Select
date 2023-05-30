@@ -11,7 +11,7 @@ Run the following commands to setup the environment:
 ```
 git clone https://github.com/SoumiDas/CheckSelect.git
 
-cd CheckSelect
+cd Checkpoint-Select
 
 conda create --name checksel --file requirements.txt
 ```
