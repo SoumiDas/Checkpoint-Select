@@ -9,7 +9,7 @@
 Run the following commands to setup the environment:
 
 ```
-git clone https://github.com/SoumiDas/CheckSelect.git
+git clone https://github.com/SoumiDas/Checkpoint-Select.git
 
 cd Checkpoint-Select
 
